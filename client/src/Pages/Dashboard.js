@@ -17,7 +17,7 @@ const Dashboard = () => {
     useEffect(() => {
         const atteendanceList = async() => {
             try {
-                const response = await axios.get('http://172.16.0.3:5000/attendance/summary');
+                const response = await axios.get('http://147.93.119.175:5000/attendance/summary');
                 const attendance = response.data.loggedInEmployees;
 
                 console.log("Response data: ", response.data)
@@ -196,7 +196,7 @@ const Dashboard = () => {
         <
         tr className = "bg-gray-800 text-sm text-center" >
         <
-        th className = "px-4 py-2 border border-gray-700" > ## < /th> <
+        th className = "px-4 py-2 border border-gray-700" > # < /th> <
         th className = "px-4 py-2 border border-gray-700" > Name < /th> <
         th className = "px-4 py-2 border border-gray-700" > Login Time < /th> <
         th className = "px-4 py-2 border border-gray-700" > Logout Time < /th> <

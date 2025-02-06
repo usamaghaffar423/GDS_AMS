@@ -11,17 +11,17 @@ const BreakRoute = require("./Routes/BreakRoute.js");
 
 const app = express();
 app.use(cors({
-  url: 'http://172.16.0.3:3000'
+    url: 'http://147.93.119.175:3000'
 }));
 app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
-      console.log('Database connected successfully');
+        console.log('Database connected successfully');
     })
     .catch((err) => {
-      console.error('Error connecting to MongoDB:', err.message);
+        console.error('Error connecting to MongoDB:', err.message);
     });
 
 app.use(EmployeeRegisterRoute);
@@ -30,15 +30,15 @@ app.use(BreakRoute);
 
 
 // API endpoint to record attendance
-app.get("/", async (req, res) => {
-  res.status(200).json({ message: "This is a backend data.!" });
+app.get("/", async(req, res) => {
+    res.status(200).json({ message: "This is a backend data.!" });
 });
 
 const port = 5000;
 
 // Start the Express server
 // Listen on the static IP
-const staticIp = '172.16.0.3';  // Your static IP address
+const staticIp = '147.93.119.175'; // Your static IP address
 app.listen(port, staticIp, () => {
-  console.log(`Server is running at http://${staticIp}:${port}`);
+    console.log(`Server is running at http://${staticIp}:${port}`);
 });
